@@ -3,5 +3,4 @@ str1 = "Holberton"
 str2 = "School"
 
 # This is a comment
-print(str1)
 print(f"Welcome to {str1} {str2}!")
