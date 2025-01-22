@@ -12,5 +12,4 @@ def print_matrix_interger(matrix=[[]]):
                     print('{:d}'.format(elem), end=' ')
                 i += 1
 
-                print()
-                
+            print()
