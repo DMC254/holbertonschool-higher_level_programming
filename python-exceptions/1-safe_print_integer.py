@@ -5,5 +5,3 @@ def safe_print_interger(value):
         return True
     except (ValueError, TypeError):
         return False
-    finally:
-        print()
