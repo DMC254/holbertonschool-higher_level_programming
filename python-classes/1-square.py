@@ -1,16 +1,10 @@
 #!/usr/bin/python3
-"""Define a square class."""
+"""Square generation module for Python project 0x06
+"""
+
 
 class Square:
+    """class defined for square generation
     """
-    A class that represents a square.
-    """
-
     def __init__(self, size):
-        """
-        Initializes a new square.
-
-        Args:
-            size: the size of the square.
-            """
         self.__size = size
