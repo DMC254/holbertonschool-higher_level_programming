@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Square generation module for Python project
+"""Square generation module for Python project 0x06
 """
 
 
@@ -26,7 +26,7 @@ class Square:
 
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """Args:
@@ -34,7 +34,7 @@ class Square:
 
         Attributes:
             __size (int): length of one side of square
-        
+
         Raises:
             TypeError: if value is not an integer
             ValueError: if value is less than 0
@@ -57,4 +57,4 @@ class Square:
 
         """
         area = self.__size * self.__size
-        return self.__size * self.__size
+        return area
