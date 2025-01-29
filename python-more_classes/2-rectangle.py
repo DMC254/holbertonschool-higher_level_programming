@@ -2,6 +2,7 @@
 """2-rectangle, built for project.
 """
 
+
 class Rectangle:
     """Takes in args for width and height of a rectangle, and contains methods
     for calculation of the area or perimeter.
@@ -12,7 +13,6 @@ class Rectangle:
 
     """
     def __init__(self, width=0, height=0):
-        # attribute assigment here engages setters defined below
         self.width = width
         self.height = height
 
