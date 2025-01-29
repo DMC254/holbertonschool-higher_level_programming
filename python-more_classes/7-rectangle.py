@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""7-rectangle, built for Holberton Python project 0x08 task 7.
+"""7-rectangle, built for project.
 """
 
 
@@ -30,7 +30,6 @@ class Rectangle:
 
         """
         type(self).number_of_instances += 1
-        # attribute assigment here engages setters defined below
         self.width = width
         self.height = height
 
