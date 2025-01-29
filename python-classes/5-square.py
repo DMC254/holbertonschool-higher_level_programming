@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Square generation module for Python project
+"""Square generation module for Python project 0x06
 """
+
 
 class Square:
     """Class defined for square generation.
@@ -25,7 +26,7 @@ class Square:
 
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """Args:
@@ -57,18 +58,17 @@ class Square:
         """
         area = self.__size * self.__size
         return area
-    
+
     def my_print(self):
-        """Prints square with # character
+        """Prints text representation of square in hash chars.
 
         Attributes:
             __size (int): length of one side of square
 
         """
-        for row in range(self.__size):
+        for row in range(0, self.__size):
             for col in range(0, self.__size):
                 print("#", end="")
             print()
         if self.__size is 0:
             print()
-            
