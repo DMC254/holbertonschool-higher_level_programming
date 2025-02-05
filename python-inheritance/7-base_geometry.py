@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-===========================
-Module with class BaseGeometry
-===========================
+===================================
+module with class BaseGeometry
+===================================
 """
+
 
 class BaseGeometry:
     """BaseGeometry class"""
