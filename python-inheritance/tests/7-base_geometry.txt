@@ -1,31 +1,38 @@
-============================================
-How to use 7-base_geometry.py
-============================================
+# Import the BaseGeometry class
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-This library is very simple, since it only has one function called
- ''integer_validator()''.
+# Create an instance of BaseGeometry
+>>> bg = BaseGeometry()
 
-Numbers:
-========
-''integer_validator()'' returns True if a num is integer.
-:: with positives integers
-   >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-   >>> bg = BaseGeometry()
+# Test: Calling area() should raise an exception
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
 
-:: with positive integer
-   >>> bg.integer_validator("my_int", 12)
+# Test: integer_validator() should accept a valid integer
+>>> bg.integer_validator("my_number", 10)
 
-:: with negative integer
-   >>> bg.integer_validator("number", -12)
-   Traceback (most recent call last):
-   ValueError: number must be greater than 0
+# Test: integer_validator() should raise TypeError if value is not an integer
+>>> bg.integer_validator("my_number", "abc")
+Traceback (most recent call last):
+    ...
+TypeError: my_number must be an integer
 
-:: with 3 arguments
-   >>> bg.integer_validator("numbers", 0, 1)
-   Traceback (most recent call last):
-   TypeError: integer_validator() takes 3 positional arguments but 4 were given
+# Test: integer_validator() should raise TypeError if value is a float
+>>> bg.integer_validator("my_number", 5.5)
+Traceback (most recent call last):
+    ...
+TypeError: my_number must be an integer
 
-:: with infinite integer
-   >>> bg.integer_validator("infnumber", int('inf'))
-   Traceback (most recent call last):
-   ValueError: invalid literal for int() with base 10: 'inf'
+# Test: integer_validator() should raise ValueError if value is zero
+>>> bg.integer_validator("my_number", 0)
+Traceback (most recent call last):
+    ...
+ValueError: my_number must be greater than 0
+
+# Test: integer_validator() should raise ValueError if value is negative
+>>> bg.integer_validator("my_number", -5)
+Traceback (most recent call last):
+    ...
+ValueError: my_number must be greater than 0
