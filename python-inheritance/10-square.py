@@ -6,25 +6,20 @@ module with class BaseGeometry
 """
 
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Rectangle(BaseGeometry):
-    """Rectangle class that inherits from BaseGeometry"""
+class Square(Rectangle):
+    """Square class that inherits from Rectangle that inherits BaseGeometry"""
 
-    def __init__(self, width, height):
+    def __init__(self, size):
         """Method for initialized the attrubutes"""
-        self.integer_validator("width", width)
-        self.__width = width
-        self.integer_validator("height", height)
-        self.__height = height
+
+        super().__init__(size, size)
+        self.integer_validator("size", size)
+        self.__size = size
 
     def area(self):
-        """Method to redefine a area method in the parent class"""
+        """rectangle area"""
 
-        return self.__width * self.__height
-
-    def __str__(self):
-        """__str__ method for return the next string"""
-
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return self.__size ** 2
