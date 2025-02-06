@@ -27,8 +27,8 @@ class Animal(ABC):
                 str: Bark
             """
             return "Bark"
-        
-    
+
+
     class Cat(Animal):
         """Cat class.
         
