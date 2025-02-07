@@ -1,17 +1,15 @@
 #!/usr/bin/python3
-"""
-Defines a class named MyList that inherits from list
-"""
+
+"""Define a class named Mylist"""
 
 
 class MyList(list):
-    """
-    MyList inherits from list.
+    """Mylist inherits from list
+
     Args:
-        list
+        list: list class
     """
+
     def print_sorted(self):
-        """
-        Prints sorted list.
-        """
+        """Prints the list, but sorted(ascending sort)"""
         print(sorted(self))
