@@ -8,11 +8,11 @@ import math
 
 class Shape(ABC):
     """Shape class
-    
+
     Args:
         ABC (class): used to create abstract methods.
     """
-    
+
     @abstractmethod
     def area(self):
         pass
@@ -23,27 +23,27 @@ class Shape(ABC):
 
 
 class Circle(Shape):
-    """Circle class
-    
+    """Circle class.
+
     Args:
         Shape (class): To inherit from.
     """
 
     def __init__(self, radius):
-        self.radius = radius
+        self.__radius = radius
 
     def area(self):
         return (math.pi * self.__radius ** 2)
-    
+
     def perimeter(self):
         return (2 * math.pi * abs(self.__radius))
-    
+
 
 class Rectangle(Shape):
     """Rectangle class
-    
+
     Args:
-        Shape (class): To inherit from.
+        Shape (class): to inherit from.
     """
 
     def __init__(self, width, height):
@@ -52,11 +52,11 @@ class Rectangle(Shape):
 
     def area(self):
         return (self.__width * self.__height)
-    
-    def perimeter(self):
-        return (2 * (self.__width + self.__height))
-    
 
-def shape_area(shape):
+    def perimeter(self):
+        return (2 * (self.__height + self.__width))
+
+
+def shape_info(shape):
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
