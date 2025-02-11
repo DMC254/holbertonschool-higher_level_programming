@@ -3,7 +3,7 @@
 
 
 class Student:
-    """Represent a student."""
+    """Represents a student."""
 
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
@@ -19,7 +19,7 @@ class Student:
                 if i in self.__dict__:
                     new[i] = self.__dict__[i]
             return new
-    
-    def reload_from_json(self,json):
+
+    def reload_from_json(self, json):
         for i in json:
             self.__dict__[i] = json[i]

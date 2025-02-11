@@ -13,7 +13,7 @@ FILENAME = "add_item.json"
 if os.path.exists(FILENAME):
     items = load_from_json_file(FILENAME)
 else:
-    item = []
+    items = []
 
 items.extend(sys.argv[1:])
 save_to_json_file(items, FILENAME)

@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""Define a function that returns the JSON representation of an object."""
+"""Define a function that returns the JSON representation of an obj"""
 
 
 import json
 
 
 def to_json_string(my_obj):
-    """Return the JSON representation of an object.
+    """Returns a JSON string representation of a given object.
 
     Args:
-        my_obj (object): The object to return a JSON representation of.
+        my_obj (object): The object to convert to a JSON string.
 
     Returns:
-        str: The JSON representation of the object.
+        str: A JSON string representation of my_obj.
     """
-    return json.dump(my_obj)
+    return json.dumps(my_obj)

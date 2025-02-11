@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-"""Define a function that writes a string to a text file."""
+"""Defines a function that writes a string to a text file."""
 
 
 def write_file(filename="", text=""):
     """Writes a string to a text file.
 
     Args:
-        filename (str): The name of the file to write to. Defaults to empty string.
-        text (str): The string to write to the file.
+        filename (str): The file to write. Defaults to "".
+        text (str): The text to write to the file. Defaults to "".
     """
-
-    with open(filename, "w", encoding="utf-8") as f:
+    with open(filename, mode="w", encoding="utf-8") as f:
         w_content = f.write(text)
     return w_content
