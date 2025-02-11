@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Converting cvs Data to JSON Format"""
+"""Converting CSV Data to JSON Format"""
 
 
 import csv
@@ -23,7 +23,7 @@ def convert_csv_to_json(csv_file):
 
             data = list(csv_data)
 
-        with open('data.json', 'w', endcoding='utf-8') as jsonFile:
+        with open('data.json', 'w', encoding='utf-8') as jsonFile:
             json.dump(data, jsonFile, indent=4)
             return True
     except Exception as e:
