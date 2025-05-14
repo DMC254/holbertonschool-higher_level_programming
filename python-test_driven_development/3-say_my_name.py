@@ -35,7 +35,7 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
-    
-    # Print without addingbextra spaces for empty strings
+
+    # Print without adding extra spaces for empty strings
     print("My name is {}{}".format(first_name,
-        f" {last_name}" if last_name else " "))
+         f" {last_name}" if last_name else " "))
