@@ -37,5 +37,4 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("last_name must be a string")
 
     # Print without adding extra spaces for empty strings
-    print("My name is {}{}".format(first_name,
-        f" {last_name}" if last_name else " "))
+    print(f"My name is {first_name} {last_name}".strip())
