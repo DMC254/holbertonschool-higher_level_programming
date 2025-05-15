@@ -26,12 +26,12 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
     # Handle the case where the text is an empty string
     if text == "":
         print()
         return
-    
+
     # Initialize an empty string for the result
     i = 0
     while i < len(text):
@@ -39,8 +39,7 @@ def text_indentation(text):
         if text[i] in ".?:":
             print("\n")
             print()
-            # Skip consecutive spaces after punctiation
-            while i + 1 < len (text) and text[i + 1] == " ":
+            # Skip consecutive spaces after punctuation
+            while i + 1 < len(text) and text[i + 1] == " ":
                 i += 1
         i += 1
-        
