@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define a square class."""
+"""Defines a square class."""
 
 
 class Square:
@@ -8,17 +8,17 @@ class Square:
     """
     def __init__(self, size=0):
         """
-        Initializes a new square.
-        
+        Initializes a new sqaure.
+
         Args:
             size: the size of the square.
-            
+
             Raises:
-            TypeError: if size is not an interger.
-            ValueError: if size is less thn 0
+            TypeError: if size is not an integer.
+            ValueError: if size is less than 0
         """
-        if not isinstance(self, int):
-            raise TypeError("size must be an interger")
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
@@ -26,8 +26,8 @@ class Square:
     def area(self):
         """
         Calculates the area of the square.
-        
+
         Returns:
-            the area of the square.
+            The area of the square.
         """
         return self.__size ** 2
