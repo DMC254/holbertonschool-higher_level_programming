@@ -2,7 +2,7 @@
 from abc import ABC, abstractmethod
 
 
-class Animal(Abc):
+class Animal(ABC):
     @abstractmethod
     def sound(self):
         pass
