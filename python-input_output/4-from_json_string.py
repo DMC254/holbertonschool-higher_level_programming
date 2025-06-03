@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""defines a function that returns an object"""
+"""Defines a function that returns an object"""
 
 
 import json
@@ -11,9 +11,9 @@ def from_json_string(my_str):
 
     Args:
         my_str (str): A JSON string.
-    
+
     Returns:
-        object An object represented by my_str.
+        object: An object represented by my_str.
     """
 
     return json.loads(my_str)
