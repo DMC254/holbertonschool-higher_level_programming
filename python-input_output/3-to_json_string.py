@@ -11,7 +11,7 @@ def to_json_string(my_obj):
 
     Args:
         my_obj (str): A string to be encoded in JSON.
-    
+
     Returns:
         str: A JSON encoded string.
     """
