@@ -10,27 +10,27 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Get MySQL credentials from command-line arguments
-    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-
-    # Connect to MySQL server
-    db = MySQLdb.connect(
+    # Get MySQL credentials from command-line aguments.
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    # Connect to MySQL server.
+    conn = MySQLdb.connect(
         host="localhost",
         user=username,
         passwd=password,
         db=db_name,
         port=3306
     )
-
-    # Create a cursor and execute the query
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-
-    # Fetch and display results
+    # Create a cursor and execute query.
+    cursor = conn.cursor()
+    cursor.execute("""SELECT * FROM states
+    WHERE BINARY name LIKE 'N%'
+    ORDER BY states.id ASC""")
+    # Fetch and display results.
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-
-    # Close cursor and database connection
+    # Close cursor and server connection.
     cursor.close()
-    db.close()
+    conn.close()
