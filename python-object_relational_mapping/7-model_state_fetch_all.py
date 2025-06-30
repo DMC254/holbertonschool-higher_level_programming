@@ -1,41 +1,32 @@
 #!/usr/bin/python3
 """
-Lists all State objects from the database hbtn_0e_6_usa.
-Usage: ./7-select_state.py
-<mysql_username> <mysql_password> <database_name>
-
-- Connects to a MySQL server running on localhost at port 3306.
-- Results are sorted in ascending order by states.id.
+Lists all cities from the database hbtn_0e_4_usa with their state names
 """
 
+import MySQLdb
 import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
 
 if __name__ == "__main__":
-    # Get MySQL credentials from command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
+    # Parámetros
+    user = sys.argv[1]
+    passwd = sys.argv[2]
     db_name = sys.argv[3]
 
-    # Create an SQLAlchemy engine
-    engine = create_engine(
-        f"mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}",
-        pool_pre_ping=True
-    )
+    # Conexión
+    db = MySQLdb.connect(host="localhost", port=3306, user=user, passwd=passwd, db=db_name)
+    cur = db.cursor()
 
-    # Create a configured "Session" class
-    Session = sessionmaker(bind=engine)
-    # Create a session
-    session = Session()
+    # Consulta con JOIN entre ciudades y estados
+    cur.execute("""
+        SELECT cities.id, cities.name, states.name
+        FROM cities
+        JOIN states ON cities.state_id = states.id
+        ORDER BY cities.id ASC
+    """)
 
-    # Query all State objects, sorted by id
-    states = session.query(State).order_by(State.id).all()
+    for row in cur.fetchall():
+        print(row)
 
-    # Display each state in the format: "<id>: <name>"
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    cur.close()
+    db.close()
 
-    # Close the session
-    session.close()

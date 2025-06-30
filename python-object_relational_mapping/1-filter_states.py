@@ -1,36 +1,28 @@
 #!/usr/bin/python3
 """
-Lists all states from the database hbtn_0e_0_usa starting with 'N'.
-Takes 3 arguments: username, password, and db_name.
-Results are sorted in ascending order by states.id.
-Uses MySQLdb to connect to a MySQL server running on
-localhost at port 3306.
+Lists all states starting with 'N' from the database hbtn_0e_0_usa
 """
+
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Get MySQL credentials from command-line aguments.
-    username = sys.argv[1]
-    password = sys.argv[2]
+    # Parámetros: usuario, contraseña y base de datos
+    user = sys.argv[1]
+    passwd = sys.argv[2]
     db_name = sys.argv[3]
-    # Connect to MySQL server.
-    conn = MySQLdb.connect(
-        host="localhost",
-        user=username,
-        passwd=password,
-        db=db_name,
-        port=3306
-    )
-    # Create a cursor and execute query.
-    cursor = conn.cursor()
-    cursor.execute("""SELECT * FROM states
-    WHERE BINARY name LIKE 'N%'
-    ORDER BY states.id ASC""")
-    # Fetch and display results.
-    rows = cursor.fetchall()
-    for row in rows:
+
+    # Conexión a la base de datos
+    db = MySQLdb.connect(host="localhost", port=3306, user=user, passwd=passwd, db=db_name)
+    cur = db.cursor()
+
+    # Consulta: estados que comienzan con 'N'
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+
+    # Mostrar resultados
+    for row in cur.fetchall():
         print(row)
-    # Close cursor and server connection.
-    cursor.close()
-    conn.close()
+
+    cur.close()
+    db.close()
+
